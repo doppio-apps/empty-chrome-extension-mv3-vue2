@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Doppio",
+  "version": "0.1.0",
+  "homepage_url": "https://doppio.app/",
+  "description": "Doppio Labs Blank Extension",
+  "default_locale": "en",
+  "key": "",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "js/content-script.js"
+      ],
+      "matches": [
+        "http://localhost:3000/*",
+        "http://localhost/*"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  }
+}
